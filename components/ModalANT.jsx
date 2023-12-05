@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
-const ModalANT = () => {
+
+const ModalANT = ({apiConsume}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -11,12 +12,17 @@ const ModalANT = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    if(isModalOpen == true){apiConsume()}
+  }, [isModalOpen])
+  
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Open Modal
+        Show emails
       </Button>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title="Emails:" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>

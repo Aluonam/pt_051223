@@ -24,9 +24,7 @@ const ApiCall = () => {
 
   return (
     <>
-    <button onClick={()=>{apiConsume()}}>click</button>
-    {dataForModal}
-    <ModalANT></ModalANT>
+    <ModalANT apiConsume={apiConsume} ></ModalANT>
     </>
   )
 }
