@@ -1,8 +1,11 @@
+import ApiCall from '@/components/ApiCall'
 import React from 'react'
 
 const ScreenPT = () => {
   return (
-    <div>screenPT</div>
+    <div>
+        <ApiCall></ApiCall>
+    </div>
   )
 }
 
