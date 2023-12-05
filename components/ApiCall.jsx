@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ModalANT from './ModalANT';
 
 const ApiCall = () => {
 
@@ -25,6 +26,7 @@ const ApiCall = () => {
     <>
     <button onClick={()=>{apiConsume()}}>click</button>
     {dataForModal}
+    <ModalANT></ModalANT>
     </>
   )
 }
