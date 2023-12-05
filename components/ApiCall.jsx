@@ -9,12 +9,22 @@ const ApiCall = () => {
             const url = await fetch(`https://reqres.in/api/users?page=2`);
             const data = await url.json();
             console.log(data.data)
+            setDataAPI(data.data)
         }catch(error){error,"error detected"}
     }
-    apiConsume()
+
+    const dataForModal = dataAPI.map((element)=> {
+        return(
+            <>
+            <h4>{element.email}</h4>
+            </>
+        )
+    })
+
   return (
     <>
-    modal
+    <button onClick={()=>{apiConsume()}}>click</button>
+    {dataForModal}
     </>
   )
 }
