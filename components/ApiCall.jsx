@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ApiCall = () => {
+
+    const [dataAPI, setDataAPI] = useState([])
+
+    const apiConsume = ()=>{
+
+    }
+
   return (
-    <div>ApiCall</div>
+    <>
+    <input></input>
+    <br></br>
+    modal
+    </>
   )
 }
 
