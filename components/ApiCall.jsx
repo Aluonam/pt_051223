@@ -14,17 +14,9 @@ const ApiCall = () => {
         }catch(error){error,"error detected"}
     }
 
-    const dataForModal = dataAPI.map((element)=> {
-        return(
-            <>
-            <h4>{element.email}</h4>
-            </>
-        )
-    })
-
   return (
     <>
-    <ModalANT apiConsume={apiConsume} ></ModalANT>
+    <ModalANT apiConsume={apiConsume} dataAPI={dataAPI}></ModalANT>
     </>
   )
 }

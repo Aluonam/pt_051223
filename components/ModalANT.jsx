@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
 
-const ModalANT = ({apiConsume}) => {
+const ModalANT = ({apiConsume,dataAPI}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -17,15 +17,20 @@ const ModalANT = ({apiConsume}) => {
     if(isModalOpen == true){apiConsume()}
   }, [isModalOpen])
   
+  const dataForModal = dataAPI.map((element)=> {
+    return(
+        <>
+        <h4>{element.email}</h4>
+        </>
+    )
+})
   return (
     <>
       <Button type="primary" onClick={showModal}>
         Show emails
       </Button>
       <Modal title="Emails:" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        {dataForModal}
       </Modal>
     </>
   );
